@@ -1,0 +1,953 @@
+{
+  "formats": {
+    ".glb": 2,
+    ".png": 31,
+    ".txt": 1,
+    ".bin": 1,
+    ".gltf": 1,
+    ".usdz": 1
+  },
+  "models": [
+    {
+      "file": "3D-models\\modular-havana-street-low-poly-asset-kit-glb\\source\\yösoghfiösbge.glb",
+      "bytes": 39909372,
+      "nodes": 19,
+      "meshes": 2,
+      "triangles": 1231,
+      "materials": [
+        {
+          "name": "Material",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Material.001",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.016",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.002",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.006",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.001",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.005",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.007",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.009",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.013",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.022",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.024",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.014",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.017",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.018",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.019",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.023",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.038",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.025",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.026",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.027",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.029",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.031",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.032",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.046",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.033",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.034",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.035",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.036",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.037",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.041",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.043",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.044",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.045",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.047",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.048",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.050",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.052",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        }
+      ],
+      "textures": [
+        {
+          "width": 1408,
+          "height": 768
+        },
+        {
+          "width": 1408,
+          "height": 768
+        },
+        {
+          "width": 1408,
+          "height": 768
+        },
+        {
+          "width": 1408,
+          "height": 768
+        },
+        {
+          "width": 1920,
+          "height": 1920
+        },
+        {
+          "width": 1408,
+          "height": 768
+        },
+        {
+          "width": 1408,
+          "height": 768
+        },
+        {
+          "width": 1408,
+          "height": 768
+        },
+        {
+          "width": 1408,
+          "height": 768
+        },
+        {
+          "width": 1408,
+          "height": 768
+        },
+        {
+          "width": 1408,
+          "height": 768
+        },
+        {
+          "width": 1408,
+          "height": 768
+        },
+        {
+          "width": 1408,
+          "height": 768
+        }
+      ],
+      "missing": [],
+      "extensions": []
+    },
+    {
+      "file": "3D-models\\modular_havana_street__low-poly_asset_kit-gltf\\scene.gltf",
+      "bytes": 125259,
+      "nodes": 95,
+      "meshes": 73,
+      "triangles": 7018,
+      "materials": [
+        {
+          "name": "Material",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Material.001",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.016",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.002",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.006",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.001",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.005",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.007",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.009",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.013",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.022",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.024",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.014",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.017",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.018",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.019",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.023",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.038",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.025",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.026",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.027",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.029",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.031",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.032",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.046",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.033",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.034",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.035",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.036",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.037",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.041",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.043",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.044",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.045",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.047",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.048",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.050",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.052",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        }
+      ],
+      "textures": [
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        }
+      ],
+      "missing": [],
+      "extensions": []
+    },
+    {
+      "file": "3D-models\\modular_havana_street__low-poly_asset_kit.glb",
+      "bytes": 17530776,
+      "nodes": 95,
+      "meshes": 73,
+      "triangles": 7018,
+      "materials": [
+        {
+          "name": "Material",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Material.001",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.016",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.002",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.006",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.001",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.005",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.007",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.009",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.013",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.022",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.024",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.014",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.017",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.018",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.019",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.023",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.038",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.025",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.026",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.027",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.029",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.031",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.032",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.046",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.033",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.034",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.035",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.036",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.037",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.041",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.043",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.044",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.045",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.047",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.048",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        },
+        {
+          "name": "Empty.050",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "BLEND"
+        },
+        {
+          "name": "Empty.052",
+          "pbr": true,
+          "doubleSided": true,
+          "alpha": "OPAQUE"
+        }
+      ],
+      "textures": [
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        },
+        {
+          "width": 1024,
+          "height": 512
+        }
+      ],
+      "missing": [],
+      "extensions": []
+    }
+  ],
+  "notes": [
+    "Yukarı ekseni Y; oyun ölçeği görsel gezi ölçeğinden ayrı uygulanır.",
+    "Kaynakta fotoğraf dokulu ince cepheler bulunur; bina içi geometri veya kapı geçitleri varsayılmaz."
+  ]
+}

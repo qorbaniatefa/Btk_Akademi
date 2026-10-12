@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {readSave,writeSave,readSettings,progressOf,SAVE_KEY} from '../src/game/save.js';
+const storage={data:new Map(),getItem(k){return this.data.get(k)||null;},setItem(k,v){this.data.set(k,v);}};
+assert.equal(readSave(storage),null);storage.setItem(SAVE_KEY,'bad');assert.equal(readSave(storage),null);
+storage.setItem(SAVE_KEY,JSON.stringify({version:1,discovered:['bench','fake','bench'],position:[null,99,1]}));
+assert.deepEqual(readSave(storage).discovered,['bench']);assert.deepEqual(readSave(storage).position,[0,.01,33]);
+assert(writeSave({discovered:['bench','plant','lamp','journal','secret'],region:true,inspected:true,position:[0,0,33]},storage));
+assert(progressOf(readSave(storage)).complete);assert.equal(progressOf(readSave(storage)).percent,100);
+assert.equal(readSettings(storage).sensitivity,1);
+writeSave({...readSave(storage),journal:{carried:true,position:[2,.5,31]}},storage);assert(readSave(storage).journal.carried);assert.deepEqual(readSave(storage).journal.position,[2,.5,31]);
+const denied={getItem(){throw Error('denied');},setItem(){throw Error('quota');}};
+assert.equal(readSave(denied),null);assert.equal(writeSave({},denied),false);
+const descriptor=Object.getOwnPropertyDescriptor(globalThis,'localStorage');Object.defineProperty(globalThis,'localStorage',{configurable:true,get(){throw Error('storage disabled');}});assert.equal(readSave(),null);assert.equal(writeSave({}),false);assert.equal(readSettings().sensitivity,1);if(descriptor)Object.defineProperty(globalThis,'localStorage',descriptor);else delete globalThis.localStorage;
+console.log('PASS: corrupt save, ID filtering, safe position validation, storage failure, completion, settings defaults');

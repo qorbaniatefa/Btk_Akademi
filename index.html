@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#14231f"><meta name="description" content="Havana sokaklarında birinci şahıs keşif oyunu. Yürü, nesneleri incele ve gizli sokak notunu bul."><title>Havana — Sokağın İzinde</title></head>
+<body>
+  <div id="scene" aria-label="Etkileşimli üç boyutlu Havana sokağı"></div>
+  <div class="grain"></div>
+  <header><a class="wordmark" href="#" aria-label="Başlangıca dön">havana<span>°</span></a><span class="header-note">BİR SOKAĞIN HİKÂYESİ</span><div class="tour-actions"><button id="play-game" class="pill">Keşif oyunu ↗</button><button id="mode" class="pill">Serbest keşif <span>↗</span></button></div></header>
+  <main>
+    <section class="chapter hero" data-step="0"><div class="copy"><div class="eyebrow"><span></span> KÜÇÜK BİR DÜNYA, BÜYÜK HİKÂYELER</div><h1>Biraz yavaşla.<br><em>Havana'dasın.</em></h1><p>Pastel cepheler, güneşte eskimiş sokaklar.<br>Her köşede keşfedilmeyi bekleyen bir detay.</p><button class="discover" data-goto="1">Sokağa adım at <span>↓</span></button></div><div class="hero-bottom"><span>23°08′ N &nbsp; 82°23′ W<br><small>HAVANA, KÜBA</small></span><span class="scroll-hint">KAYDIR & KEŞFET <span>↓</span></span><span class="edition">İNTERAKTİF 3D GEZİ<br><small>VOL. 01 / HAVANA</small></span></div></section>
+    <section class="chapter" data-step="1"><div class="copy"><div class="eyebrow">01 / SOKAĞIN RİTMİ</div><h2>Her sokak<br><em>bir sahne.</em></h2><p>Yukarıdan bir bakışla başlayan yolculuk, şimdi sokağın içine uzanıyor. Kaydırmaya devam et; şehir sana yaklaşsın.</p></div></section>
+    <section class="chapter" data-step="2"><div class="copy"><div class="eyebrow">02 / YAKINDAN BAK</div><h2>Güzellik<br><em>detaylarda.</em></h2><p>Renklerin, cephelerin ve küçük sokak eşyalarının izini sür. Bir nesneye dokunarak kamerayı doğrudan ona odaklayabilirsin.</p><span class="text-note">↗ Bir nesneye tıkla, etrafında gez.</span></div></section>
+    <section class="chapter" data-step="3"><div class="copy"><div class="eyebrow">03 / BAŞKA BİR AÇI</div><h2>Aynı sokak.<br><em>Yeni bir hikâye.</em></h2><p>Kameranın yönü değiştikçe yeni köşeler görünür. Acele etme; küçük dünyayı kendi hızında keşfet.</p></div></section>
+    <section class="chapter" data-step="4"><div class="copy"><div class="eyebrow">04 / KEŞİF SENİN</div><h2>Biraz daha<br><em>kal.</em></h2><p>Serbest keşifle kamerayı döndür, yakınlaş ve ilgini çeken eşyalara odaklan. Bu sokakta her açı sana ait.</p><button class="discover" id="explore">Serbestçe keşfet <span>↗</span></button></div></section>
+  </main>
+  <nav class="chapter-nav" aria-label="Gezi durakları"><button data-goto="0" class="active" aria-label="Başlangıç"><span>00</span></button><button data-goto="1" aria-label="Sokağın ritmi"><span>01</span></button><button data-goto="2" aria-label="Detaylar"><span>02</span></button><button data-goto="3" aria-label="Başka bir açı"><span>03</span></button><button data-goto="4" aria-label="Serbest keşif"><span>04</span></button></nav>
+  <div class="viewer-tools"><button id="reset" aria-label="Kamerayı sıfırla" title="Kamerayı sıfırla">↺</button><button id="zoom-in" aria-label="Yakınlaş" title="Yakınlaş">+</button><button id="zoom-out" aria-label="Uzaklaş" title="Uzaklaş">−</button></div>
+  <div class="focus-panel" hidden><span class="eyebrow">NESNEYE ODAKLANILDI</span><strong id="focus-name">Sokak detayı</strong><p>Sürükle: etrafında dön · Kaydır: yakınlaş</p><button id="return">Geziye dön ↗</button></div>
+  <div class="loader" role="status"><div class="wordmark">havana<span>°</span></div><p>Sokak hazırlanıyor… <span id="load-progress">0%</span></p><div class="load-track"><div id="load-bar"></div></div></div>
+  <footer><span id="status">SCROLL İLE KEŞFET</span><a href="https://sketchfab.com/tryfield" target="_blank" rel="noopener">3D model: TRYFIELD · CC BY 4.0</a></footer>
+  <script type="module" src="/src/main.js"></script>
+</body></html>

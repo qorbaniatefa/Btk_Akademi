@@ -1,0 +1,16 @@
+{
+  "name": "havana-scroll-experience",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "inspect:model": "node scripts/inspect-model.mjs",
+    "analyze:assets": "node scripts/analyze-assets.mjs",
+    "test": "node scripts/check.mjs",
+    "test:browser": "node scripts/check.mjs --browser"
+  },
+  "dependencies": { "three": "^0.180.0", "vite": "^7.1.0" },
+  "devDependencies": { "@playwright/test": "^1.55.0" }
+}

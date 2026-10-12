@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import { Scene, Mesh, BoxGeometry, MeshBasicMaterial, PerspectiveCamera, Vector3 } from 'three';
+import { CollisionWorld } from '../src/game/collision-world.js';
+import { Player } from '../src/game/player.js';
+const scene=new Scene();
+const wall=new Mesh(new BoxGeometry(10,4,.1),new MeshBasicMaterial());wall.position.set(0,2,0);scene.add(wall);
+const slope=new Mesh(new BoxGeometry(3,.15,5),new MeshBasicMaterial());slope.rotation.x=-.18;slope.position.set(10,.5,0);scene.add(slope);
+const step=new Mesh(new BoxGeometry(3,.18,2),new MeshBasicMaterial());step.position.set(-10,.04,0);scene.add(step);
+const world=new CollisionWorld([scene]);const p=new Player(new PerspectiveCamera(),world);
+function ticks(n,keys=new Set(),dt=1/60){for(let i=0;i<n;i++)p.update(dt,keys);}
+p.teleport(new Vector3(0,2,3));ticks(150);assert(p.grounded);assert(Math.abs(p.feet.y+.05)<.01,'ground');
+assert(p.jump());ticks(10);assert(p.feet.y>.25,'jump');ticks(100);assert(p.grounded,'landing');
+ticks(180,new Set(['KeyW','ShiftLeft']));assert(p.feet.z>.30,'front wall collision');
+p.teleport(new Vector3(0,.01,-3));p.yaw=Math.PI;ticks(180,new Set(['KeyW','ShiftLeft']));assert(p.feet.z<-.30,'reverse wall collision');
+p.teleport(new Vector3(20,.01,4));p.yaw=0;ticks(60,new Set(['KeyW']));const normalDistance=4-p.feet.z;
+p.teleport(new Vector3(20,.01,4));p.yaw=0;ticks(120,new Set(['KeyW']),1/120);assert(Math.abs(normalDistance-(4-p.feet.z))<.04,'delta time independence');
+p.teleport(new Vector3(20,.01,4));ticks(60,new Set(['KeyW','ShiftLeft']));assert(4-p.feet.z>normalDistance*1.5,'running');
+p.teleport(new Vector3(10,2,1));ticks(180);assert(p.grounded&&p.feet.y>.1,'slope support');
+p.teleport(new Vector3(-10,.01,2));p.yaw=0;ticks(60,new Set(['KeyW']));assert(p.feet.z<1&&p.feet.y>.02,'step traversal');
+p.teleport(new Vector3(0,-5,0));ticks(1);assert(p.feet.z>30,'fall recovery');
+p.reset();p.look(4000,4000,1);assert(Math.abs(p.yaw)>Math.PI*2,'360 degree look');assert(Math.abs(p.pitch)<=1.48,'pitch limit');p.reset();p.look(100,0,2);assert.equal(p.yaw,-.4,'mouse sensitivity');
+console.log('PASS: capsule, both wall sides, ground, jump/landing, sprint, 60/120 Hz, slope, low step, safe reset');

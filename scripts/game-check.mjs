@@ -1,0 +1,68 @@
+import { chromium } from '@playwright/test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+fs.mkdirSync('test-results',{recursive:true});
+const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true,args:['--enable-webgl','--use-angle=swiftshader']});
+try{
+const page=await browser.newPage({viewport:{width:1100,height:750},reducedMotion:'reduce'});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.addInitScript(()=>{if(!localStorage.getItem('havana-settings-v1'))localStorage.setItem('havana-settings-v1',JSON.stringify({quality:'low',volume:0,bob:false,sensitivity:1}));});
+await page.goto('http://127.0.0.1:5173/');await page.waitForFunction(()=>window.__game?.active,{timeout:60000});
+await page.waitForFunction(()=>document.querySelector('.loader').classList.contains('done'));
+await page.screenshot({path:'test-results/game-welcome.png'});
+await page.locator('[data-screen="welcome"] [data-action="new"]').click();
+await page.waitForFunction(()=>window.__game.state==='playing'||!document.querySelector('.game-fallback').hidden);
+if(await page.locator('.game-fallback').isVisible())await page.locator('[data-action="dragMode"]').click();
+assert.equal(await page.evaluate(()=>window.__game.state),'playing');
+console.log('Input mode',await page.evaluate(()=>({locked:!!document.pointerLockElement,drag:window.__game.dragMode})));
+const before=await page.evaluate(()=>window.__game.player.feet.toArray());
+await page.keyboard.down('w');await page.waitForTimeout(800);await page.keyboard.up('w');
+const after=await page.evaluate(()=>window.__game.player.feet.toArray());assert(after[2]<before[2]-.2,'W moves player');
+await page.keyboard.press('f');assert(await page.evaluate(()=>window.__game.flashlight.intensity>0),'flashlight');
+await page.keyboard.press('r');assert((await page.evaluate(()=>window.__game.player.feet.z))>32,'reset');
+await page.screenshot({path:'test-results/game-playing.png'});
+await page.keyboard.press('Escape');await page.waitForFunction(()=>window.__game.state==='pause');
+const pausedFeet=await page.evaluate(()=>window.__game.player.feet.toArray());await page.waitForTimeout(300);assert.deepEqual(await page.evaluate(()=>window.__game.player.feet.toArray()),pausedFeet,'pause freezes physics');
+const physics=await page.evaluate(()=>{
+ const g=window.__game,p=g.player;const original=p.feet.clone();p.reset();for(let i=0;i<120;i++)p.update(1/120,new Set());
+ const grounded=p.grounded;const groundY=p.feet.y;
+ p.jump();for(let i=0;i<15;i++)p.update(1/120,new Set());const jumpY=p.feet.y;
+ for(let i=0;i<180;i++)p.update(1/120,new Set());const landed=p.grounded;
+ p.teleport(original);return {grounded,groundY,jumpY,landed,triangles:g.world.triangleCount};
+});assert(physics.grounded&&physics.landed&&physics.jumpY>physics.groundY+.3);console.log('Actual scene physics',physics);
+await page.locator('[data-screen="pause"] [data-action="resume"]').click();
+await page.waitForFunction(()=>window.__game.state==='playing');
+// Position the test player beside the real generated bank; interact via the E key.
+await page.evaluate(()=>{
+ const g=window.__game;g.player.teleport(new g.player.safe.constructor(-7.5,.01,29.3));g.player.yaw=0;g.player.pitch=-.56;g.player.syncCamera(false);
+ g.interaction.update();g.ui.prompt(g.interaction.target);
+});
+await page.waitForFunction(()=>window.__game.interaction.target?.id==='bench');
+await page.keyboard.press('e');await page.waitForFunction(()=>window.__game.state==='inspect');
+assert.equal(await page.locator('#inspect-title').textContent(),'Sokak bankı');
+assert(await page.evaluate(()=>window.__game.data.discovered.includes('bench')));
+await page.screenshot({path:'test-results/game-inspection.png'});
+const inspectBefore=await page.evaluate(()=>window.__game.inspectionCamera.position.distanceTo(window.__game.inspectionControls.target));
+await page.locator('[data-action="inspectZoomIn"]').click();
+assert(await page.evaluate(()=>window.__game.inspectionCamera.position.distanceTo(window.__game.inspectionControls.target))<inspectBefore,'inspection zoom');
+await page.locator('[data-action="closeInspect"]').click();
+await page.keyboard.press('Tab');await page.waitForFunction(()=>window.__game.state==='collection');
+assert(await page.locator('#game-collection').textContent().then(t=>t.includes('Sokak bankı')));
+await page.screenshot({path:'test-results/game-collection.png'});
+await page.keyboard.press('Tab');await page.waitForFunction(()=>window.__game.state==='playing');
+await page.keyboard.press('Escape');
+await page.locator('[data-screen="pause"] [data-action="settings"]').click();
+await page.locator('#mouse-sensitivity').fill('1.8');await page.locator('#sound-volume').fill('0.1');await page.locator('#camera-bob').check();
+assert.equal(await page.evaluate(()=>window.__game.settings.sensitivity),1.8);
+await page.locator('[data-screen="settings"] [data-action="back"]').click();
+await page.locator('[data-screen="pause"] [data-action="menu"]').click();
+await page.reload();await page.waitForFunction(()=>window.__game?.active);
+assert(await page.locator('[data-screen="welcome"] [data-action="continue"]').isVisible());
+assert(await page.evaluate(()=>window.__game.data.discovered.includes('bench')));
+assert.equal(await page.locator('[data-screen="welcome"] [data-action="new"]').textContent(),'Yeni Oyun ↗');
+assert.equal(await page.evaluate(()=>window.__game.settings.sensitivity),1.8,'settings persisted');
+await page.locator('[data-screen="welcome"] [data-action="tour"]').click();
+assert(!await page.evaluate(()=>window.__game.active));assert(await page.locator('h1').first().isVisible());
+await page.locator('#play-game').click();assert(await page.evaluate(()=>window.__game.active));
+assert.deepEqual(errors,[]);console.log('PASS: actual model, WASD, flashlight/reset, pointer lock or explicit fallback, pause, raycast/E inspection, collection, settings, reload/continue, tour preservation, zero page errors');
+}finally{await browser.close();}
